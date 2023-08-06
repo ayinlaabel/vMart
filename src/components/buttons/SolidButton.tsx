@@ -1,7 +1,8 @@
+import React from "react";
 import { ActivityIndicator, Text, View } from "react-native";
-import { Button, ButtonText } from "./styles";
 import { Colors } from "../../utils/shared/colors";
 import { ButtonProps } from "./interface";
+import { Button, ButtonText } from "./styles";
 
 const SolidButton = ({
   width,

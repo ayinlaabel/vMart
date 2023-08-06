@@ -1,8 +1,11 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { OutlineButton, SolidButton } from "./src/components/buttons";
 import { Colors } from "./src/utils/shared/colors";
 import { useState } from "react";
+import { PhoneNumberInput } from "./src/components/inputs";
+import OtpInput from "./src/components/inputs/OTPInput";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +35,8 @@ export default function App() {
         isLoading={isLoading}
         onPress={handlePress}
       />
+      <PhoneNumberInput />
+      <OtpInput length={4} onChange={handlePress} />
     </View>
   );
 }
