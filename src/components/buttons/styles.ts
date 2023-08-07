@@ -27,6 +27,7 @@ export const Button: React.FC<ButtonProps> = styled.TouchableOpacity`
 
 export const ButtonText: React.FC<ButtonTextProps> = styled.Text`
   font-size: ${(props: any) => (props.size ? props.size : "14px")};
+  font-weight: 500;
   color: ${(props: any) => (props.color ? props.color : Colors.white)};
   padding: 0;
   margin: 0;
