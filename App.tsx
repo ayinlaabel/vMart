@@ -6,6 +6,7 @@ import { Colors } from "./src/utils/shared/colors";
 import { useState } from "react";
 import { PhoneNumberInput } from "./src/components/inputs";
 import OtpInput from "./src/components/inputs/OTPInput";
+import GetStarted from "./src/screens/get-started/GetStarted";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,30 +14,6 @@ export default function App() {
     setIsLoading(!isLoading);
   };
   return (
-    <View>
-      <OutlineButton
-        mt="50px"
-        border="2px"
-        borderColor={Colors.brandColor}
-        borderRadius="50px"
-        title="Submit"
-        color={Colors.brandColor}
-        size="18px"
-        isLoading={isLoading}
-        onPress={handlePress}
-      />
-      <SolidButton
-        width="100px"
-        mt="10px"
-        title="Submit"
-        size="20px"
-        borderRadius="50px"
-        background={Colors.brandColor}
-        isLoading={isLoading}
-        onPress={handlePress}
-      />
-      <PhoneNumberInput />
-      <OtpInput length={4} onChange={handlePress} />
-    </View>
+    <GetStarted />
   );
 }
