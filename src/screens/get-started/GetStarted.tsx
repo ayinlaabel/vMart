@@ -20,7 +20,7 @@ const GetStarted = () => {
     <FixContainer background={Colors.brandColor} px="30px" py="60px">
       <SafeAreaView>
         <Paragraph
-          width="70%"
+          width="75%"
           size="34px"
           fontWeight="600"
           textTransform="capitalize"
@@ -40,7 +40,6 @@ const GetStarted = () => {
             isLoading={isLoading}
           />
         </ButtonContainer>
-        <View style={{ height: 200 }}></View>
       </SafeAreaView>
     </FixContainer>
   );

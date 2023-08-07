@@ -1,11 +1,20 @@
+export interface PhoneNumberInputContainerProps {
+  children?: any;
+  mt?: string;
+  mb?: string;
+  mr?: string;
+  ml?: string;
+  borderColor?: string;
+}
+
 export interface InputProps {
-  width?: String;
-  height?: String;
-  placeholder?: String;
-  mt?: String;
-  mb?: String;
-  mr?: String;
-  ml?: String;
+  width?: string;
+  height?: string;
+  placeholder?: string;
+  mt?: string;
+  mb?: string;
+  mr?: string;
+  ml?: string;
   onChange: (props: any) => any;
 }
 

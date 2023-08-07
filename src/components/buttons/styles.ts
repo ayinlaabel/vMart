@@ -1,11 +1,22 @@
 import styled from "styled-components/native";
-import { designWidth, wp } from "../../utils/shared/responsive-dimension";
+import { designWidth, hp, wp } from "../../utils/shared/responsive-dimension";
 import { ButtonProps, ButtonTextProps } from "./interface";
 import { Colors } from "../../utils/shared/colors";
+import { ButtonContainerProps } from "../../screens/get-started/interface";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-nocheck
 export const ButtonContainer = styled.TouchableOpacity``;
+export const FloatingButtonContainer: React.FC<ButtonContainerProps>  = styled.View`
+  width: 100%;
+  height: ${(props: any) => (props.height ? hp(props.height) : "100%")};
+  justify-content: flex-end;
+  ${(props: any) => (props.position ? `position: ${props.position}` : null)};
+  ${(props: any) => (props.top ? `top: ${props.top}` : null)};
+  ${(props: any) => (props.bottom ? `bottom: ${props.bottom}` : null)};
+  ${(props: any) => (props.right ? `right: ${props.right}` : null)};
+  ${(props: any) => (props.left ? `left: ${props.left}` : null)};
+`;
 export const Button: React.FC<ButtonProps> = styled.TouchableOpacity`
   flex-direction: row;
   width: ${(props: any) => (props.width ? props.width : "100%")};

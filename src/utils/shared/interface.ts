@@ -3,23 +3,34 @@ export interface ContainerProps {
   background?: string;
   px?: string;
   py?: string;
+  width?: number;
+  height?: number;
+  mt?: string;
+  mb?: string;
+  mr?: string;
+  ml?: string;
 }
 
 export interface TextProps {
   children: any;
   color?: string;
   size?: string;
-  textTransform?: String;
-  fontWeight?: String;
+  textTransform?: string;
+  fontWeight?: string;
   width?: string;
 }
 
 export interface ImageContainerProps {
   children: any;
-  width?: String;
+  width?: string;
   height?: number;
   mt?: string;
   mb?: string;
   mr?: string;
   ml?: string;
+}
+
+export interface EmptyContainerProps {
+  height?: string;
+  width?: string;
 }

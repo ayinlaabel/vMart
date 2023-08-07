@@ -1,12 +1,20 @@
 import styled from "styled-components/native";
-import { InputProps } from "./interface";
+import { InputProps, PhoneNumberInputContainerProps } from "./interface";
+import React from "react";
+import { Colors } from "../../utils/shared/colors";
 
-export const PhoneNumberInputContainer = styled.View`
+export const PhoneNumberInputContainer: React.FC<PhoneNumberInputContainerProps> = styled.View`
   width: 100%;
   height: 50px;
   flex-direction: row;
   border-width: 1px;
   border-radius: 100px;
+  border-color: ${(props: any) =>
+    props.borderColor ? props.borderColor : Colors.offWhite};
+  margin-top: ${(props: any) => (props.mt ? props.mt : "0px")};
+  margin-bottom: ${(props: any) => (props.mb ? props.mb : "0px")};
+  margin-right: ${(props: any) => (props.mr ? props.mr : "0px")};
+  margin-left: ${(props: any) => (props.ml ? props.ml : "0px")};
 `;
 
 export const PhoneInput: InputProps = styled.TextInput`
