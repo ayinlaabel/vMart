@@ -7,6 +7,7 @@ import { Colors } from "../../utils/shared/colors";
 //@ts-nocheck
 export const ButtonContainer = styled.TouchableOpacity``;
 export const Button: React.FC<ButtonProps> = styled.TouchableOpacity`
+  flex-direction: row;
   width: ${(props: any) => (props.width ? props.width : "100%")};
   background: ${(props: any) =>
     props.background ? props.background : "transparent"};
@@ -31,4 +32,11 @@ export const ButtonText: React.FC<ButtonTextProps> = styled.Text`
   color: ${(props: any) => (props.color ? props.color : Colors.white)};
   padding: 0;
   margin: 0;
+`;
+
+export const IconContainer = styled.View`
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
 `;

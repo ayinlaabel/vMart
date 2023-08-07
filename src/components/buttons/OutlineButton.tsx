@@ -1,7 +1,8 @@
 import React from "react";
 import { ActivityIndicator, View } from "react-native";
-import { Button, ButtonText } from "./styles";
+import { Button, ButtonText, IconContainer } from "./styles";
 import { ButtonProps } from "./interface";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const OutlineButton = ({
   border,
@@ -17,6 +18,7 @@ const OutlineButton = ({
   mr,
   ml,
   isLoading,
+  icon,
   onPress,
 }: ButtonProps) => {
   return (
@@ -31,11 +33,24 @@ const OutlineButton = ({
       borderColor={borderColor}
       activeOpacity={0.9}
       onPress={onPress}
+      disabled={isLoading}
     >
-      <ButtonText size={size} color={color}>
-        {isLoading ? <ActivityIndicator /> : null}
-        {title}
-      </ButtonText>
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : icon ? (
+        <>
+          <IconContainer>
+            <Icon name={icon} size={20} />
+          </IconContainer>
+          <ButtonText size={size} color={color}>
+            {title}
+          </ButtonText>
+        </>
+      ) : (
+        <ButtonText size={size} color={color}>
+          {title}
+        </ButtonText>
+      )}
     </Button>
   );
 };

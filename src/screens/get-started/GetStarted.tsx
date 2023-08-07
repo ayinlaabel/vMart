@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FixContainer,
   ImageContainer,
@@ -12,7 +12,10 @@ import { SolidButton } from "../../components/buttons";
 import { ButtonContainer } from "./styles";
 
 const GetStarted = () => {
-  const handlePress = () => {};
+  const [isLoading, setIsLoading] = useState(false);
+  const handlePress = () => {
+    setIsLoading(!isLoading);
+  };
   return (
     <FixContainer background={Colors.brandColor} px="30px" py="60px">
       <SafeAreaView>
@@ -34,6 +37,7 @@ const GetStarted = () => {
             onPress={handlePress}
             background={Colors.primaryColor}
             borderRadius="50px"
+            isLoading={isLoading}
           />
         </ButtonContainer>
         <View style={{ height: 200 }}></View>

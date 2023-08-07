@@ -2,7 +2,8 @@ import React from "react";
 import { ActivityIndicator, Text, View } from "react-native";
 import { Colors } from "../../utils/shared/colors";
 import { ButtonProps } from "./interface";
-import { Button, ButtonText } from "./styles";
+import { Button, ButtonText, IconContainer } from "./styles";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const SolidButton = ({
   width,
@@ -19,6 +20,7 @@ const SolidButton = ({
   mr,
   ml,
   isLoading,
+  icon,
   onPress,
 }: ButtonProps) => {
   return (
@@ -34,11 +36,24 @@ const SolidButton = ({
       background={background}
       activeOpacity={0.9}
       onPress={onPress}
+      disabled={isLoading}
     >
-      <ButtonText size={size} color={color}>
-        {isLoading ? <ActivityIndicator /> : null}
-        {title}
-      </ButtonText>
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : icon ? (
+        <>
+          <IconContainer>
+            <Icon name={icon} size={20} />
+          </IconContainer>
+          <ButtonText size={size} color={color}>
+            {title}
+          </ButtonText>
+        </>
+      ) : (
+        <ButtonText size={size} color={color}>
+          {title}
+        </ButtonText>
+      )}
     </Button>
   );
 };

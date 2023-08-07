@@ -5,6 +5,7 @@ export interface ButtonProps {
   border?: String;
   borderRadius?: String;
   borderColor?: String;
+  icon?: any;
   children?: any;
   title?: String;
   color?: String;
@@ -14,6 +15,7 @@ export interface ButtonProps {
   mb?: String;
   mr?: String;
   ml?: String;
+  disabled?: Boolean;
   isLoading?: Boolean;
   onPress: (props: any) => any;
 }
