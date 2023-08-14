@@ -9,6 +9,8 @@ export interface ContainerProps {
   mb?: string;
   mr?: string;
   ml?: string;
+  items?: string;
+  justify?: string;
 }
 
 export interface TextProps {
@@ -33,4 +35,10 @@ export interface ImageContainerProps {
 export interface EmptyContainerProps {
   height?: string;
   width?: string;
+}
+
+export interface TextLinkProps {
+  children: any;
+  activeOpacity: number;
+  onPress: (props: any) => any;
 }

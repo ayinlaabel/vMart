@@ -8,6 +8,7 @@ import { PhoneNumberInput } from "./src/components/inputs";
 import OtpInput from "./src/components/inputs/OTPInput";
 import GetStarted from "./src/screens/get-started/GetStarted";
 import Signup from "./src/screens/signup/Signup";
+import Verification from "./src/screens/verification/Verification";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +16,8 @@ export default function App() {
     setIsLoading(!isLoading);
   };
   return (
-    <Signup />
+    <Verification />
+    // <Signup />
     // <GetStarted />
   );
 }

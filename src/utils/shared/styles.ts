@@ -4,12 +4,14 @@ import {
   ContainerProps,
   EmptyContainerProps,
   ImageContainerProps,
+  TextLinkProps,
   TextProps,
 } from "./interface";
 import React from "react";
 import { hp, wp } from "./responsive-dimension";
 
 export const FixContainer: React.FC<ContainerProps> = styled.View`
+
   flex: 1;
   background: ${(props: any) =>
     props.background ? props.background : Colors.white};
@@ -28,8 +30,8 @@ export const Container: React.FC<ContainerProps> = styled.View`
   margin-bottom: ${(props: any) => (props.mb ? props.mb : "0px")};
   margin-right: ${(props: any) => (props.mr ? props.mr : "0px")};
   margin-left: ${(props: any) => (props.ml ? props.ml : "0px")};
-  align-items: center;
-  justify-content: center;
+  align-items: ${({ items }: any) => (items ? items : "flex-sharts")};
+  justify-content: ${({ justify }: any) => (justify ? justify : "flex-start")};
 `;
 
 export const EmptyContainer: React.FC<EmptyContainerProps> = styled.View`
@@ -59,4 +61,11 @@ export const ImageContainer: React.FC<ImageContainerProps> = styled.View`
 export const ImageTag = styled.Image`
   width: 100%;
   height: 100%;
+`;
+
+export const TextLink: React.FC<TextLinkProps> = styled.TouchableOpacity`
+  font-size: ${({ size }: any) => (size ? size : "12px")};
+  color: ${({ color }: any) => (color ? color : Colors.black)};
+  text-transform: ${({ textTransform }: any) =>
+    textTransform ? textTransform : "normal"};
 `;
