@@ -9,15 +9,8 @@ import OtpInput from "./src/components/inputs/OTPInput";
 import GetStarted from "./src/screens/get-started/GetStarted";
 import Signup from "./src/screens/signup/Signup";
 import Verification from "./src/screens/verification/Verification";
+import Navigation from "./src/navigation/Navigation";
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const handlePress = () => {
-    setIsLoading(!isLoading);
-  };
-  return (
-    <Verification />
-    // <Signup />
-    // <GetStarted />
-  );
+  return <Navigation />;
 }

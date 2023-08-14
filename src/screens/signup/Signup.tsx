@@ -10,9 +10,15 @@ import { Colors } from "../../utils/shared/colors";
 import { PhoneNumberInput } from "../../components/inputs";
 import { OutlineButton, SolidButton } from "../../components/buttons";
 import { FloatingButtonContainer } from "../../components/buttons/styles";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { AppStackParamsList } from "../../navigation/routes";
 
 const Signup = () => {
-  const handlePress = () => {};
+  const { navigate } = useNavigation<StackNavigationProp<AppStackParamsList>>();
+  const handlePress = () => {
+    navigate("Verification");
+  };
 
   return (
     <FixContainer px="20px">
@@ -31,7 +37,13 @@ const Signup = () => {
           background={Colors.brandColor}
           borderRadius="50px"
         />
-        <Container height={80} mt="10px" mb="10px">
+        <Container
+          height={80}
+          mt="10px"
+          mb="10px"
+          items="center"
+          justify="center"
+        >
           <Paragraph fontWeight="600">or</Paragraph>
         </Container>
         <Container height={100}>
