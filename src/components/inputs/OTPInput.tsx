@@ -37,6 +37,7 @@ const OtpInput = ({ length, onChange }: OtpInputProps) => {
     <OtpInputContainer>
       {inputLength.map((input: any, i: number) => (
         <OtpInputN
+          key={i}
           keyboardType="numeric"
           maxLength={1}
           secureTextEntry={true}

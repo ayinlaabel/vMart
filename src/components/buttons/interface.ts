@@ -1,28 +1,57 @@
 export interface ButtonProps {
-  width?: String;
-  height?: String;
-  background?: String;
-  border?: String;
-  borderRadius?: String;
-  borderColor?: String;
+  width?: string;
+  height?: string;
+  background?: string;
+  border?: string;
+  borderRadius?: string;
+  borderColor?: string;
   icon?: any;
   children?: any;
-  title?: String;
-  color?: String;
-  size?: String;
+  title?: string;
+  color?: string;
+  size?: string;
   activeOpacity?: any;
-  mt?: String;
-  mb?: String;
-  mr?: String;
-  ml?: String;
+  mt?: string;
+  mb?: string;
+  mr?: string;
+  ml?: string;
+  disabled?: Boolean;
+  isLoading?: Boolean;
+  onPress: (props: any) => any;
+}
+export interface FloatButtonProps {
+  children?: any;
+  position: string;
+  top?: string;
+  bottom?: string;
+  right?: string;
+  left?: string;
+  width?: string;
+  height?: string;
+  background?: string;
+  border?: string;
+  borderRadius?: string;
+  borderColor?: string;
+  icon?: any;
+  title?: string;
+  color?: string;
+  size?: string;
+  activeOpacity?: any;
+  mt?: string;
+  mb?: string;
+  mr?: string;
+  ml?: string;
+  flexDirection?: string;
+  items?: string;
+  justify?: string;
   disabled?: Boolean;
   isLoading?: Boolean;
   onPress: (props: any) => any;
 }
 
 export interface ButtonTextProps {
-  // title: String;
-  color?: String;
-  size?: String;
+  // title: string;
+  color?: string;
+  size?: string;
   children?: any;
 }
