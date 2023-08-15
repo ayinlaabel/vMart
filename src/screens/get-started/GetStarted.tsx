@@ -10,11 +10,18 @@ import { Image, SafeAreaView, View } from "react-native";
 import { getStartedImage } from "../../assets";
 import { SolidButton } from "../../components/buttons";
 import { ButtonContainer } from "./styles";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { AppStackParamsList } from "../../navigation/routes";
 
 const GetStarted = () => {
   const [isLoading, setIsLoading] = useState(false);
+
+  const { navigate } = useNavigation<StackNavigationProp<AppStackParamsList>>();
+
   const handlePress = () => {
     setIsLoading(!isLoading);
+    navigate("SignUp");
   };
   return (
     <FixContainer background={Colors.brandColor} px="30px" py="60px">
